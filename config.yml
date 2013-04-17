@@ -1,0 +1,22 @@
+spawnRegion: spawn
+effects:
+  speed: true
+  slow: false
+  fast_digging: true
+  slow_digging: false
+  increase_damage: false
+  heal: false
+  harm: false
+  jump: true
+  confusion: false
+  regeneration: true
+  damage_resistance: true
+  fire_resistance: true
+  water_breathing: true
+  invisibility: false
+  blindness: false
+  night_vision: true
+  hunger: false
+  weakness: false
+  poison: false
+  wither: false

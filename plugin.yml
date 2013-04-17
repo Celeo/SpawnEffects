@@ -1,0 +1,11 @@
+name: SpawnEffects
+version: 1.0.0.0
+author: Celeo
+website: http://www.darktidegames.com/ 
+descriptions: When the player is in the spawn region, they experience potion effects
+main: com.darktidegames.celeo.spawneffects.SpawnEffects
+depends: [WorldEdit, WorldGuard]
+commands:
+  spawneffects:
+    usage: /<command> reload
+    descriptions: Reloads from the configuration file
