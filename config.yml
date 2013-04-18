@@ -1,22 +1,62 @@
 spawnRegion: spawn
 effects:
-  speed: true
-  slow: false
-  fast_digging: true
-  slow_digging: false
-  increase_damage: false
-  heal: false
-  harm: false
-  jump: true
-  confusion: false
-  regeneration: true
-  damage_resistance: true
-  fire_resistance: true
-  water_breathing: true
-  invisibility: false
-  blindness: false
-  night_vision: true
-  hunger: false
-  weakness: false
-  poison: false
-  wither: false
+  speed:
+    enabled: true
+    level: 1
+  slow:
+    enabled: false
+    level: 1
+  fast_digging:
+    enabled: true
+    level: 1
+  slow_digging:
+    enabled: true
+    level: 1
+  increase_damage:
+    enabled: true
+    level: 1
+  heal:
+    enabled: true
+    level: 1
+  harm:
+    enabled: false
+    level: 1
+  jump:
+    enabled: true
+    level: 1
+  confusion:
+    enabled: false
+    level: 1
+  regeneration:
+    enabled: true
+    level: 1
+  damage_resistance:
+    enabled: true
+    level: 1
+  fire_resistance:
+    enabled: true
+    level: 1
+  water_breathing:
+    enabled: true
+    level: 1
+  invisibility:
+    enabled: false
+    level: 1
+  blindness:
+    enabled: false
+    level: 1
+  night_vision:
+    enabled: false
+    level: 1
+  hunger:
+    enabled: false
+    level: 1
+  weakness:
+    enabled: false
+    level: 1
+  poison:
+    enabled: false
+    level: 1
+  wither:
+    enabled: false
+    level: 1

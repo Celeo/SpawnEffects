@@ -1,8 +1,9 @@
 package com.darktidegames.celeo.spawneffects;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -25,8 +26,8 @@ public class SpawnEffects extends JavaPlugin
 
 	/** The region in which the effects are applied */
 	private String spawnRegion = "";
-	/** All possible effects we can pull from to add to the player */
-	private List<PotionEffectType> effects = new ArrayList<PotionEffectType>();
+	/** Effects and their strength */
+	private Map<PotionEffectType, Integer> effects = new HashMap<PotionEffectType, Integer>();
 	/** WorldGuard connection */
 	private WorldGuardPlugin wg = null;
 
@@ -71,8 +72,8 @@ public class SpawnEffects extends JavaPlugin
 	 */
 	private void refreshEffects(Player player)
 	{
-		for (PotionEffectType type : effects)
-			player.addPotionEffect(type.createEffect(15 * 20 * (int) (1 / type.getDurationModifier()), 1));
+		for (PotionEffectType type : effects.keySet())
+			player.addPotionEffect(type.createEffect(15 * 20 * (int) (1 / type.getDurationModifier()), effects.get(type).intValue()));
 	}
 
 	/**
@@ -96,8 +97,9 @@ public class SpawnEffects extends JavaPlugin
 			if (effect == null)
 				continue;
 			p = "effects." + effect.getName().toLowerCase();
-			if (getConfig().isSet(p) && getConfig().getBoolean(p))
-				effects.add(effect);
+			if (getConfig().isSet(p) && getConfig().getBoolean(p + ".enabled"))
+				effects.put(effect, Integer.valueOf(getConfig().getInt(p
+						+ ".level")));
 		}
 		getLogger().info("Settings loaded from configuration file");
 	}
